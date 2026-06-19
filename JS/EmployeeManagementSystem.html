@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+</head>
+<body>
+
+    <h1>Employee Management System</h1>
+
+    <script>
+
+        // ==========================================
+        // Task 1 : Employee Registration
+        // ==========================================
+
+        let employeeName = "Aditya";
+        let employeeId = "EMP101";
+        let department = "Development";
+        let salary = 50000;
+        const permanentEmployee = true;
+
+        console.log("Employee Details");
+        console.log("----------------");
+        console.log(`Name       : ${employeeName}`);
+        console.log(`ID         : ${employeeId}`);
+        console.log(`Department : ${department}`);
+        console.log(`Salary     : ${salary}`);
+        console.log(`Permanent  : ${permanentEmployee}`);
+
+        // ==========================================
+        // Task 2 : Employee Skills
+        // ==========================================
+
+        let skills = ["HTML", "CSS", "JavaScript", "React", "Git", "Node.js"];
+
+        console.log("\nEmployee Skills");
+        console.log(`First Skill  : ${skills[0]}`);
+        console.log(`Third Skill  : ${skills[2]}`);
+        console.log(`Last Skill   : ${skills[skills.length - 1]}`);
+        console.log(`Total Skills : ${skills.length}`);
+
+        // ==========================================
+        // Task 3 : Company Object
+        // ==========================================
+
+        let company = {
+            companyName: "Stackly IT",
+            location: "Coimbatore",
+            employees: 250,
+            technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js"]
+        };
+
+        console.log("\nCompany Details");
+        console.log(`Company Name      : ${company.companyName}`);
+        console.log(`Location          : ${company.location}`);
+        console.log(`Second Technology : ${company.technologies[1]}`);
+        console.log(`Total Technologies: ${company.technologies.length}`);
+
+        // ==========================================
+        // Task 4 : Salary Calculator
+        // ==========================================
+
+        let basicSalary = 30000;
+        let bonus = 5000;
+
+        let totalSalary = basicSalary + bonus;
+        let tax = totalSalary * 0.10;
+        let finalSalary = totalSalary - tax;
+
+        console.log("\nSalary Calculator");
+        console.log(`Basic Salary : ${basicSalary}`);
+        console.log(`Bonus        : ${bonus}`);
+        console.log(`Total Salary : ${totalSalary}`);
+        console.log(`Tax (10%)    : ${tax}`);
+        console.log(`Final Salary : ${finalSalary}`);
+
+        // ==========================================
+        // Task 5 : Attendance Checker
+        // ==========================================
+
+        let attendance = 92;
+
+        let examStatus =
+            attendance >= 75 ? "Eligible for Exam" : "Not Eligible";
+
+        console.log("\nAttendance Status");
+        console.log(examStatus);
+
+        // ==========================================
+        // Task 6 : Login Verification
+        // ==========================================
+
+        let username = "admin";
+        let password = "12345";
+
+        let loginStatus =
+            (username === "admin" && password === "12345")
+                ? "Login Successful"
+                : "Invalid Credentials";
+
+        console.log("\nLogin Status");
+        console.log(loginStatus);
+
+        // ==========================================
+        // Task 7 : Product Billing
+        // ==========================================
+
+        let productName = "Laptop";
+        let productPrice = 45000;
+        let quantity = 2;
+
+        let totalBill = productPrice * quantity;
+
+        console.log("\nProduct Billing");
+        console.log(`Product  : ${productName}`);
+        console.log(`Price    : ${productPrice}`);
+        console.log(`Quantity : ${quantity}`);
+        console.log(`Total    : ${totalBill}`);
+
+        // ==========================================
+        // Task 8 : Increment & Decrement
+        // ==========================================
+
+        let visitors = 100;
+
+        console.log("\nIncrement & Decrement");
+
+        console.log("Initial Visitors :", visitors);
+
+        console.log("Pre Increment :", ++visitors);
+        console.log("Post Increment :", visitors++);
+        console.log("Current Value :", visitors);
+
+        console.log("Pre Decrement :", --visitors);
+        console.log("Post Decrement :", visitors--);
+        console.log("Final Value :", visitors);
+
+        // ==========================================
+        // Task 9 : Comparison Checker
+        // ==========================================
+
+        console.log("\nComparison Results");
+
+        console.log(10 == "10");      // true
+        console.log(10 === "10");     // false
+        console.log(20 != "20");      // false
+        console.log(20 !== "20");     // true
+        console.log(5 < 10);          // true
+        console.log(15 >= 20);        // false
+        console.log(100 <= 100);      // true
+
+        // ==========================================
+        // Task 10 : User Interaction
+        // ==========================================
+
+        let empName = prompt("Enter Employee Name");
+        let empAge = prompt("Enter Employee Age");
+
+        let joinCompany = confirm("Do you want to join our company?");
+
+        if (joinCompany) {
+            alert(`Welcome ${empName}`);
+        } else {
+            alert("Thank You");
+        }
+
+        // ==========================================
+        // FINAL CHALLENGE
+        // ==========================================
+
+        let employee = {
+            name: "Aditya",
+            id: "EMP101",
+            department: "Development",
+            experience: 3
+        };
+
+        let employeeSkills = [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Git",
+            "Node.js"
+        ];
+
+        let employeeSalary = 50000;
+        let employeeBonus = 5000;
+        let employeeFinalSalary = employeeSalary + employeeBonus;
+
+        let employeeAttendance = 92;
+
+        let examEligibility =
+            employeeAttendance >= 75 ? "Eligible" : "Not Eligible";
+
+        let user = "admin";
+        let pass = "12345";
+
+        let login =
+            (user === "admin" && pass === "12345")
+                ? "Success"
+                : "Failed";
+
+        console.log(`
+==============================
+      EMPLOYEE PORTAL
+==============================
+
+Employee Name : ${employee.name}
+
+Employee ID   : ${employee.id}
+
+Department    : ${employee.department}
+
+Experience    : ${employee.experience} Years
+
+Salary        : ₹${employeeSalary}
+
+Bonus         : ₹${employeeBonus}
+
+Final Salary  : ₹${employeeFinalSalary}
+
+Skills        : ${employeeSkills.join(", ")}
+
+Attendance    : ${employeeAttendance}%
+
+Exam Status   : ${examEligibility}
+
+Login Status  : ${login}
+
+Company       : Stackly IT
+
+Location      : Coimbatore
+
+==============================
+        `);
+
+    </script>
+
+</body>
+</html>
