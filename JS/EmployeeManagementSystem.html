@@ -12,10 +12,24 @@
     <script>
 
         // ==========================================
+        // User Interaction (Input First)
+        // ==========================================
+
+        let empName = prompt("Enter Employee Name");
+        let empAge = prompt("Enter Employee Age");
+
+        let joinCompany = confirm("Do you want to join our company?");
+
+        joinCompany
+            ? alert(`Welcome ${empName}`)
+            : alert("Thank You");
+
+
+        // ==========================================
         // Task 1 : Employee Registration
         // ==========================================
 
-        let employeeName = "Aditya";
+        let employeeName = empName;
         let employeeId = "EMP101";
         let department = "Development";
         let salary = 50000;
@@ -29,6 +43,7 @@
         console.log(`Salary     : ${salary}`);
         console.log(`Permanent  : ${permanentEmployee}`);
 
+
         // ==========================================
         // Task 2 : Employee Skills
         // ==========================================
@@ -40,6 +55,7 @@
         console.log(`Third Skill  : ${skills[2]}`);
         console.log(`Last Skill   : ${skills[skills.length - 1]}`);
         console.log(`Total Skills : ${skills.length}`);
+
 
         // ==========================================
         // Task 3 : Company Object
@@ -57,6 +73,7 @@
         console.log(`Location          : ${company.location}`);
         console.log(`Second Technology : ${company.technologies[1]}`);
         console.log(`Total Technologies: ${company.technologies.length}`);
+
 
         // ==========================================
         // Task 4 : Salary Calculator
@@ -76,6 +93,7 @@
         console.log(`Tax (10%)    : ${tax}`);
         console.log(`Final Salary : ${finalSalary}`);
 
+
         // ==========================================
         // Task 5 : Attendance Checker
         // ==========================================
@@ -83,10 +101,13 @@
         let attendance = 92;
 
         let examStatus =
-            attendance >= 75 ? "Eligible for Exam" : "Not Eligible";
+            attendance >= 75
+                ? "Eligible for Exam"
+                : "Not Eligible";
 
         console.log("\nAttendance Status");
         console.log(examStatus);
+
 
         // ==========================================
         // Task 6 : Login Verification
@@ -103,6 +124,7 @@
         console.log("\nLogin Status");
         console.log(loginStatus);
 
+
         // ==========================================
         // Task 7 : Product Billing
         // ==========================================
@@ -118,6 +140,7 @@
         console.log(`Price    : ${productPrice}`);
         console.log(`Quantity : ${quantity}`);
         console.log(`Total    : ${totalBill}`);
+
 
         // ==========================================
         // Task 8 : Increment & Decrement
@@ -137,6 +160,7 @@
         console.log("Post Decrement :", visitors--);
         console.log("Final Value :", visitors);
 
+
         // ==========================================
         // Task 9 : Comparison Checker
         // ==========================================
@@ -151,27 +175,23 @@
         console.log(15 >= 20);        // false
         console.log(100 <= 100);      // true
 
+
         // ==========================================
-        // Task 10 : User Interaction
+        // Task 10 : User Details
         // ==========================================
 
-        let empName = prompt("Enter Employee Name");
-        let empAge = prompt("Enter Employee Age");
+        console.log("\nUser Details");
+        console.log(`Employee Name : ${empName}`);
+        console.log(`Employee Age  : ${empAge}`);
 
-        let joinCompany = confirm("Do you want to join our company?");
-
-        if (joinCompany) {
-            alert(`Welcome ${empName}`);
-        } else {
-            alert("Thank You");
-        }
 
         // ==========================================
         // FINAL CHALLENGE
         // ==========================================
 
         let employee = {
-            name: "Aditya",
+            name: empName,
+            age: empAge,
             id: "EMP101",
             department: "Development",
             experience: 3
@@ -192,8 +212,15 @@
 
         let employeeAttendance = 92;
 
+        let experienceStatus =
+            employee.experience >= 2
+                ? "Experienced Employee"
+                : "Fresher";
+
         let examEligibility =
-            employeeAttendance >= 75 ? "Eligible" : "Not Eligible";
+            employeeAttendance >= 75
+                ? "Eligible"
+                : "Not Eligible";
 
         let user = "admin";
         let pass = "12345";
@@ -210,11 +237,15 @@
 
 Employee Name : ${employee.name}
 
+Employee Age  : ${employee.age}
+
 Employee ID   : ${employee.id}
 
 Department    : ${employee.department}
 
 Experience    : ${employee.experience} Years
+
+Experience Status : ${experienceStatus}
 
 Salary        : ₹${employeeSalary}
 
@@ -230,9 +261,9 @@ Exam Status   : ${examEligibility}
 
 Login Status  : ${login}
 
-Company       : Stackly IT
+Company       : ${company.companyName}
 
-Location      : Coimbatore
+Location      : ${company.location}
 
 ==============================
         `);
