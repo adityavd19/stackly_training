@@ -1,0 +1,219 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+
+    <h1>JavaScript Tasks Output</h1>
+
+    <script>
+
+        // ==========================================
+        // Task 1: Employee Information System
+        // ==========================================
+
+        let empName = prompt("Task 1 - Enter Employee Name:");
+        let empAge = prompt("Enter Employee Age:");
+        let empDepartment = prompt("Enter Employee Department:");
+        let empSalary = Number(prompt("Enter Employee Salary:"));
+
+        let employee = {
+            name: empName,
+            age: empAge,
+            department: empDepartment,
+            salary: empSalary
+        };
+
+        console.log("===== Task 1 =====");
+        console.log(employee);
+
+        if (empSalary > 30000) {
+            console.log("Eligible for Bonus");
+        } else {
+            console.log("Not Eligible");
+        }
+
+        // ==========================================
+        // Task 2: Supermarket Billing
+        // ==========================================
+
+        let productName = prompt("Task 2 - Enter Product Name:");
+        let productPrice = Number(prompt("Enter Product Price:"));
+        let quantity = Number(prompt("Enter Quantity:"));
+
+        let totalBill = productPrice * quantity;
+        let finalAmount;
+
+        if (totalBill > 5000) {
+            finalAmount = totalBill - (totalBill * 10 / 100);
+            console.log("10% Discount Applied");
+        } else {
+            finalAmount = totalBill;
+        }
+
+        console.log("===== Task 2 =====");
+        console.log("Product Name:", productName);
+        console.log("Total Bill:", totalBill);
+        console.log("Final Amount:", finalAmount);
+
+        // ==========================================
+        // Task 3: Student Result Portal
+        // ==========================================
+
+        let studentName = prompt("Task 3 - Enter Student Name:");
+        let marks = Number(prompt("Enter Marks:"));
+
+        console.log("===== Task 3 =====");
+
+        if (marks >= 90) {
+            console.log(studentName + " : Grade A");
+        } else if (marks >= 75) {
+            console.log(studentName + " : Grade B");
+        } else if (marks >= 50) {
+            console.log(studentName + " : Grade C");
+        } else {
+            console.log(studentName + " : Fail");
+        }
+
+        // ==========================================
+        // Task 4: Bank ATM Eligibility
+        // ==========================================
+
+        let userName = prompt("Task 4 - Enter User Name:");
+        let balance = Number(prompt("Enter Account Balance:"));
+        let withdrawal = Number(prompt("Enter Withdrawal Amount:"));
+
+        console.log("===== Task 4 =====");
+
+        if (withdrawal <= balance) {
+            console.log("Transaction Successful");
+        } else {
+            console.log("Insufficient Balance");
+        }
+
+        // ==========================================
+        // Task 5: Login Validation
+        // ==========================================
+
+        let username = "admin";
+        let password = "12345";
+
+        let inputUsername = prompt("Task 5 - Enter Username:");
+        let inputPassword = prompt("Enter Password:");
+
+        console.log("===== Task 5 =====");
+
+        if (inputUsername === username && inputPassword === password) {
+            console.log("Login Successful");
+        } else {
+            console.log("Invalid Username or Password");
+        }
+
+        // ==========================================
+        // Task 6: Online Food Order
+        // ==========================================
+
+        let foodItems = [
+            "Pizza",
+            "Burger",
+            "Pasta",
+            "Sandwich",
+            "Biryani",
+            "Dosa",
+            "Noodles",
+            "Ice Cream"
+        ];
+
+        console.log("===== Task 6 =====");
+        console.log("First Item:", foodItems[0]);
+        console.log("Last Item:", foodItems[foodItems.length - 1]);
+        console.log("Total Items:", foodItems.length);
+
+        for (let item of foodItems) {
+            console.log(item);
+        }
+
+        // ==========================================
+        // Task 7: Company Employee Directory
+        // ==========================================
+
+        let employeeDirectory = {
+            name: "Aditya",
+            age: 24,
+            department: "IT",
+            salary: 40000,
+            experience: "2 Years"
+        };
+
+        console.log("===== Task 7 =====");
+
+        for (let key in employeeDirectory) {
+            console.log(key + " : " + employeeDirectory[key]);
+        }
+
+        // ==========================================
+        // Task 8: Traffic Signal System
+        // ==========================================
+
+        let signal = prompt("Task 8 - Enter Signal Color:");
+
+        console.log("===== Task 8 =====");
+
+        switch (signal.toLowerCase()) {
+            case "red":
+                console.log("Stop");
+                break;
+
+            case "yellow":
+                console.log("Ready");
+                break;
+
+            case "green":
+                console.log("Go");
+                break;
+
+            default:
+                console.log("Invalid Signal");
+        }
+
+        // ==========================================
+        // Task 9: Age Category Checker
+        // ==========================================
+
+        let age = Number(prompt("Task 9 - Enter Your Age:"));
+
+        console.log("===== Task 9 =====");
+
+        if (age >= 0 && age <= 12) {
+            console.log("Child");
+        } else if (age >= 13 && age <= 19) {
+            console.log("Teenager");
+        } else if (age >= 20 && age <= 59) {
+            console.log("Adult");
+        } else {
+            console.log("Senior Citizen");
+        }
+
+        // ==========================================
+        // Task 10: Employee Attendance
+        // ==========================================
+
+        let employeeName = prompt("Task 10 - Enter Employee Name:");
+        let attendance = prompt("Enter Attendance (Present/Absent):");
+
+        let message = attendance.toLowerCase() === "present"
+            ? "Welcome " + employeeName + " | Attendance: Present"
+            : "Attendance: Absent";
+
+        console.log("===== Task 10 =====");
+        console.log(message);
+
+    </script>
+
+</body>
+</html>
+```
