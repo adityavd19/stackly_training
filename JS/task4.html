@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Assignment - Tasks 1 to 10</title>
+</head>
+<body>
+
+<h1>JavaScript Assignment (Tasks 1 to 10)</h1>
+<p>Open the browser console (F12 → Console) to view the outputs.</p>
+
+<script>
+
+// ===========================================
+// Task 1 : Employee Management System
+// ===========================================
+
+console.log("===== TASK 1 =====");
+
+let employees = [
+    {name:"Aditya", id:101, salary:30000},
+    {name:"John", id:102, salary:60000}
+];
+
+for(let emp of employees){
+    console.log("Name:", emp.name);
+    console.log("ID:", emp.id);
+    console.log("Salary:", emp.salary);
+
+    if(emp.salary >= 50000){
+        console.log("Employee Eligible For Bonus");
+    }else{
+        console.log("Employee Not Eligible For Bonus");
+    }
+
+    console.log("-------------------------");
+}
+
+// ===========================================
+// Task 2 : Student Result Portal
+// ===========================================
+
+console.log("===== TASK 2 =====");
+
+let mark1 = Number(prompt("Enter Mark 1"));
+let mark2 = Number(prompt("Enter Mark 2"));
+let mark3 = Number(prompt("Enter Mark 3"));
+
+let total = mark1 + mark2 + mark3;
+let percentage = total / 3;
+
+console.log("Total:", total);
+console.log("Percentage:", percentage);
+
+if(percentage >= 90){
+    console.log("Grade : A+");
+}else if(percentage >= 80){
+    console.log("Grade : A");
+}else if(percentage >= 70){
+    console.log("Grade : B");
+}else if(percentage >= 60){
+    console.log("Grade : C");
+}else{
+    console.log("Grade : Fail");
+}
+
+// ===========================================
+// Task 3 : E-Commerce Cart
+// ===========================================
+
+console.log("===== TASK 3 =====");
+
+let products = [
+    {name:"Laptop", price:50000},
+    {name:"Mouse", price:1000},
+    {name:"Keyboard", price:2000}
+];
+
+function calculateBill(){
+
+    let bill = 0;
+
+    for(let item of products){
+        bill += item.price;
+    }
+
+    console.log("Total Bill:", bill);
+
+    if(bill > 5000){
+        let discount = bill * 0.10;
+        bill -= discount;
+        console.log("10% Discount Applied");
+    }
+
+    console.log("Final Bill:", bill);
+}
+
+calculateBill();
+
+// ===========================================
+// Task 4 : Login Authentication
+// ===========================================
+
+console.log("===== TASK 4 =====");
+
+let username = "admin";
+let password = "12345";
+
+let user = prompt("Enter Username");
+let pass = prompt("Enter Password");
+
+(user === username && pass === password)
+? console.log("Login Success")
+: console.log("Invalid Credentials");
+
+// ===========================================
+// Task 5 : Traffic Signal System
+// ===========================================
+
+console.log("===== TASK 5 =====");
+
+let signal = prompt("Enter Signal Color");
+
+switch(signal.toLowerCase()){
+
+    case "red":
+        console.log("Stop");
+        break;
+
+    case "yellow":
+        console.log("Ready");
+        break;
+
+    case "green":
+        console.log("Go");
+        break;
+
+    default:
+        console.log("Invalid Signal");
+}
+
+// ===========================================
+// Task 6 : ATM Withdrawal System
+// ===========================================
+
+console.log("===== TASK 6 =====");
+
+let balance = Number(prompt("Enter Balance"));
+let withdraw = Number(prompt("Enter Withdrawal Amount"));
+
+if(withdraw <= balance){
+    balance -= withdraw;
+    console.log("Withdrawal Successful");
+    console.log("Remaining Balance:", balance);
+}else{
+    console.log("Insufficient Balance");
+}
+
+// ===========================================
+// Task 7 : Online Food Order
+// ===========================================
+
+console.log("===== TASK 7 =====");
+
+function placeOrder(callback){
+    console.log("Order Received");
+    callback();
+}
+
+function prepareFood(callback){
+    console.log("Food Preparing");
+    callback();
+}
+
+function deliverFood(){
+    console.log("Food Delivered");
+}
+
+placeOrder(function(){
+    prepareFood(deliverFood);
+});
+
+// ===========================================
+// Task 8 : Generator Function
+// ===========================================
+
+console.log("===== TASK 8 =====");
+
+function* cashback(){
+    yield "10% Cashback";
+    yield "20% Cashback";
+    yield "50% Cashback";
+    yield "Better Luck Next Time";
+}
+
+let offer = cashback();
+
+console.log(offer.next().value);
+console.log(offer.next().value);
+console.log(offer.next().value);
+console.log(offer.next().value);
+
+// ===========================================
+// Task 9 : Hospital Patient Check
+// ===========================================
+
+console.log("===== TASK 9 =====");
+
+let age = Number(prompt("Enter Age"));
+let weight = Number(prompt("Enter Weight"));
+
+if(age > 18){
+
+    if(weight > 50){
+        console.log("Eligible For Treatment");
+    }else{
+        console.log("Not Eligible");
+    }
+
+}else{
+    console.log("Not Eligible");
+}
+
+// ===========================================
+// Task 10 : Mini Employee Portal
+// ===========================================
+
+console.log("===== TASK 10 =====");
+
+let employeeList = [];
+
+function addEmployee(name,id,salary){
+    employeeList.push({name,id,salary});
+}
+
+function viewEmployees(){
+    console.log("Employee List");
+    for(let emp of employeeList){
+        console.log(emp);
+    }
+}
+
+function calculateBonus(){
+    for(let emp of employeeList){
+        if(emp.salary >= 50000){
+            console.log(emp.name + " : Eligible For Bonus");
+        }else{
+            console.log(emp.name + " : Not Eligible");
+        }
+    }
+}
+
+function searchEmployee(id){
+    let emp = employeeList.find(e => e.id == id);
+    if(emp){
+        console.log("Employee Found:", emp);
+    }else{
+        console.log("Employee Not Found");
+    }
+}
+
+function deleteEmployee(id){
+    employeeList = employeeList.filter(e => e.id != id);
+    console.log("Employee Deleted");
+}
+
+function totalEmployees(){
+    console.log("Total Employees:", employeeList.length);
+}
+
+addEmployee("Aditya",101,30000);
+addEmployee("John",102,60000);
+addEmployee("Rahul",103,45000);
+
+viewEmployees();
+calculateBonus();
+searchEmployee(102);
+deleteEmployee(101);
+viewEmployees();
+totalEmployees();
+
+</script>
+
+</body>
+</html>
