@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function Tasks</title>
+</head>
+<body>
+
+    <h1>JavaScript Function Tasks</h1>
+    <p>Open the browser Console (F12 → Console) to view the output.</p>
+
+    <script>
+
+        // ==========================================
+        // JavaScript Function Tasks
+        // ==========================================
+
+        // ==========================================
+        // 1. Employee Salary
+        // ==========================================
+
+        function yearlySalary(monthSalary) {
+            return monthSalary * 12;
+        }
+
+        let monthlySalary = 45000;
+
+        console.log("===== Task 1 =====");
+        console.log("Monthly Salary :", monthlySalary);
+        console.log("Yearly Salary :", yearlySalary(monthlySalary));
+
+
+        // ==========================================
+        // 2. Student Pass or Fail
+        // ==========================================
+
+        function checkResult(marks) {
+
+            if (marks >= 35) {
+                return "Pass";
+            }
+            else {
+                return "Fail";
+            }
+
+        }
+
+        let marks = 72;
+
+        console.log("===== Task 2 =====");
+        console.log("Marks :", marks);
+        console.log("Result :", checkResult(marks));
+
+
+        // ==========================================
+        // 3. Food Bill
+        // ==========================================
+
+        function foodBill(price, quantity) {
+            return price * quantity;
+        }
+
+        let burgerPrice = 180;
+        let quantity = 3;
+
+        console.log("===== Task 3 =====");
+        console.log("Burger Price :", burgerPrice);
+        console.log("Quantity :", quantity);
+        console.log("Total Bill :", foodBill(burgerPrice, quantity));
+
+
+        // ==========================================
+        // 4. Welcome Employee
+        // ==========================================
+
+        function welcomeEmployee(name, department) {
+
+            console.log("Welcome", name);
+            console.log("Department :", department);
+
+        }
+
+        console.log("===== Task 4 =====");
+        welcomeEmployee("Naveen", "Development");
+
+
+        // ==========================================
+        // 5. Shopping Discount
+        // ==========================================
+
+        function finalAmount(price, discount) {
+
+            return price - discount;
+
+        }
+
+        console.log("===== Task 5 =====");
+        console.log("Price : 5000");
+        console.log("Discount : 500");
+        console.log("Final Amount :", finalAmount(5000, 500));
+
+
+        // ==========================================
+        // 6. Company Login (Callback)
+        // ==========================================
+
+        function dashboard() {
+
+            console.log("Loading Dashboard...");
+
+        }
+
+        function login(callback) {
+
+            console.log("Login Successful");
+            callback();
+
+        }
+
+        console.log("===== Task 6 =====");
+        login(dashboard);
+
+
+        // ==========================================
+        // 7. Food Delivery (Higher Order Function)
+        // ==========================================
+
+        function order() {
+
+            console.log("Order Received");
+
+        }
+
+        function preparing() {
+
+            console.log("Preparing Food");
+
+        }
+
+        function outForDelivery() {
+
+            console.log("Out for Delivery");
+
+        }
+
+        function delivered() {
+
+            console.log("Delivered");
+
+        }
+
+        function processFood(step1, step2, step3, step4) {
+
+            step1();
+            step2();
+            step3();
+            step4();
+
+        }
+
+        console.log("===== Task 7 =====");
+        processFood(order, preparing, outForDelivery, delivered);
+
+
+        // ==========================================
+        // 8. Lucky Draw (Generator Function)
+        // ==========================================
+
+        function* couponGenerator() {
+
+            yield "10%";
+            yield "20%";
+            yield "50%";
+            yield "Better Luck Next Time";
+
+        }
+
+        let coupon = couponGenerator();
+
+        console.log("===== Task 8 =====");
+        console.log(coupon.next().value);
+        console.log(coupon.next().value);
+        console.log(coupon.next().value);
+        console.log(coupon.next().value);
+
+
+        // ==========================================
+        // 9. Employee Bonus (Currying)
+        // ==========================================
+
+        function bonus(salary) {
+
+            return function (bonusAmount) {
+
+                console.log("Total Salary :", salary + bonusAmount);
+
+            }
+
+        }
+
+        console.log("===== Task 9 =====");
+        bonus(50000)(5000);
+
+
+        // ==========================================
+        // 10. Merge Employee Details
+        // ==========================================
+
+        let employeePersonal = {
+
+            name: "Naveen",
+            age: 24
+
+        };
+
+        let employeeOffice = {
+
+            department: "Development",
+            salary: 50000
+
+        };
+
+        let employee = {
+
+            ...employeePersonal,
+            ...employeeOffice
+
+        };
+
+        console.log("===== Task 10 =====");
+        console.log(employee);
+
+
+        // ==========================================
+        // 11. Shopping Cart
+        // ==========================================
+
+        let cart1 = ["Mobile", "Laptop"];
+
+        let cart2 = ["Headphone", "Mouse"];
+
+        let cart = [...cart1, ...cart2];
+
+        console.log("===== Task 11 =====");
+        console.log(cart);
+
+
+        // ==========================================
+        // 12. Student Marks (Rest Operator)
+        // ==========================================
+
+        function student(name, ...marks) {
+
+            let total = 0;
+
+            for (let mark of marks) {
+
+                total += mark;
+
+            }
+
+            let average = total / marks.length;
+
+            console.log("Student :", name);
+            console.log("Total Marks :", total);
+            console.log("Average :", average);
+
+        }
+
+        console.log("===== Task 12 =====");
+        student("Naveen", 90, 85, 88, 95);
+
+
+        // ==========================================
+        // 13. Product Details (Object Destructuring)
+        // ==========================================
+
+        let product = {
+
+            name: "Laptop",
+            price: 65000,
+            brand: "Dell",
+            stock: 20
+
+        };
+
+        let { name, price } = product;
+
+        console.log("===== Task 13 =====");
+        console.log("Name :", name);
+        console.log("Price :", price);
+
+
+        // ==========================================
+        // 14. Customer Details (Array Destructuring)
+        // ==========================================
+
+        let customer = [101, "Naveen", "Chennai", 9876543210];
+
+        let [id, customerName, city] = customer;
+
+        console.log("===== Task 14 =====");
+        console.log("ID :", id);
+        console.log("Name :", customerName);
+        console.log("City :", city);
+
+
+        // ==========================================
+        // 15. Add Product (push)
+        // ==========================================
+
+        let products = ["Mobile", "Laptop"];
+
+        products.push("Headphone");
+
+        console.log("===== Task 15 =====");
+        console.log(products);
+
+
+        // ==========================================
+        // 16. Remove Last Product (pop)
+        // ==========================================
+
+        let cartItems = ["Mobile", "Laptop", "Headphone"];
+
+        cartItems.pop();
+
+        console.log("===== Task 16 =====");
+        console.log(cartItems);
+
+
+        // ==========================================
+        // 17. Replace Employee (splice)
+        // ==========================================
+
+        let employees = ["Rahul", "Arun", "John", "David"];
+
+        employees.splice(2, 1, "Naveen");
+
+        console.log("===== Task 17 =====");
+        console.log(employees);
+
+
+        // ==========================================
+        // 18. Search Product (includes)
+        // ==========================================
+
+        let productList = ["Mouse", "Keyboard", "Monitor", "Laptop"];
+
+        console.log("===== Task 18 =====");
+        console.log("Laptop Available :", productList.includes("Laptop"));
+
+
+        // ==========================================
+        // 19. Employee Ranking (sort)
+        // ==========================================
+
+        let salaries = [25000, 45000, 30000, 70000];
+
+        salaries.sort(function (a, b) {
+
+            return a - b;
+
+        });
+
+        console.log("===== Task 19 =====");
+        console.log(salaries);
+
+
+        // ==========================================
+        // 20. Reverse Chat Messages
+        // ==========================================
+
+        let messages = ["Hi", "Hello", "How are you?", "Good Morning"];
+
+        messages.reverse();
+
+        console.log("===== Task 20 =====");
+        console.log(messages);
+
+
+        // ==========================================
+        // BONUS TASK
+        // Employee Management System
+        // ==========================================
+
+        console.log("===== Bonus Task =====");
+
+        let employeeList = [
+
+            {
+                id: 101,
+                name: "Naveen",
+                salary: 50000
+            },
+
+            {
+                id: 102,
+                name: "Rahul",
+                salary: 45000
+            }
+
+        ];
+
+
+        // Add Employee
+
+        employeeList.push({
+
+            id: 103,
+            name: "Arun",
+            salary: 40000
+
+        });
+
+        console.log("Employees");
+        console.log(employeeList);
+
+
+        // Search Employee by ID
+
+        let searchEmployee = employeeList.find(function (emp) {
+
+            return emp.id === 102;
+
+        });
+
+        console.log("Search Employee");
+        console.log(searchEmployee);
+
+
+        // Calculate Salary + Bonus
+
+        let totalSalary = searchEmployee.salary + 5000;
+
+        console.log("Salary + Bonus :", totalSalary);
+
+
+        // Remove Employee
+
+        employeeList.splice(1, 1);
+
+        console.log("After Remove");
+        console.log(employeeList);
+
+
+        // Sort Employee Salary
+
+        employeeList.sort(function (a, b) {
+
+            return a.salary - b.salary;
+
+        });
+
+        console.log("Sorted by Salary");
+        console.log(employeeList);
+
+
+        // Find Employee by Name
+
+        let employeeName = employeeList.find(function (emp) {
+
+            return emp.name === "Naveen";
+
+        });
+
+        console.log("Find by Name");
+        console.log(employeeName);
+
+
+        // Destructuring
+
+        let { id: empId, name: empName, salary } = employeeList[0];
+
+        console.log("Employee Details");
+        console.log("ID :", empId);
+        console.log("Name :", empName);
+        console.log("Salary :", salary);
+
+    </script>
+
+</body>
+</html>
