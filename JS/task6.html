@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Array Tasks</title>
+</head>
+<body>
+
+<h2>Open Console (F12) to See the Output</h2>
+
+<script>
+
+// ==========================================
+// Employee Array
+// ==========================================
+
+let employees = [
+    {
+        name: "Naveen",
+        id: 101,
+        salary: 30000
+    },
+    {
+        name: "John",
+        id: 102,
+        salary: 60000
+    },
+    {
+        name: "Arun",
+        id: 103,
+        salary: 45000
+    }
+];
+
+// ==========================================
+// Task 1 - Find Highest Salary
+// ==========================================
+
+console.log("========== TASK 1 ==========");
+
+let highestEmployee = employees[0];
+
+for(let i = 1; i < employees.length; i++)
+{
+    if(employees[i].salary > highestEmployee.salary)
+    {
+        highestEmployee = employees[i];
+    }
+}
+
+console.log("Highest Salary :", highestEmployee.salary);
+console.log("Employee Name :", highestEmployee.name);
+
+
+// ==========================================
+// Task 2 - Find Employee by ID
+// ==========================================
+
+console.log("\n========== TASK 2 ==========");
+
+let searchId = 103;
+let found = false;
+
+for(let i = 0; i < employees.length; i++)
+{
+    if(employees[i].id === searchId)
+    {
+        console.log("Employee Found");
+        console.log("Name :", employees[i].name);
+        console.log("Salary :", employees[i].salary);
+        found = true;
+        break;
+    }
+}
+
+if(!found)
+{
+    console.log("Employee Not Found");
+}
+
+
+// ==========================================
+// Task 3 - Calculate Salary with Bonus
+// ==========================================
+
+console.log("\n========== TASK 3 ==========");
+
+let bonus = 5000;
+
+for(let i = 0; i < employees.length; i++)
+{
+    console.log(employees[i].name + " : " + (employees[i].salary + bonus));
+}
+
+
+// ==========================================
+// Task 4 - Experience Check
+// ==========================================
+
+console.log("\n========== TASK 4 ==========");
+
+let employeeExperience = [
+    {
+        name: "Naveen",
+        experience: 2
+    },
+    {
+        name: "John",
+        experience: 7
+    },
+    {
+        name: "Arun",
+        experience: 5
+    }
+];
+
+for(let i = 0; i < employeeExperience.length; i++)
+{
+    if(employeeExperience[i].experience >= 5)
+    {
+        console.log(employeeExperience[i].name + " - Senior Employee");
+    }
+    else
+    {
+        console.log(employeeExperience[i].name + " - Junior Employee");
+    }
+}
+
+
+// ==========================================
+// Task 5 - Display Employee Names
+// ==========================================
+
+console.log("\n========== TASK 5 ==========");
+
+for(let i = 0; i < employees.length; i++)
+{
+    console.log(employees[i].name);
+}
+
+
+// ==========================================
+// Task 6 - Display Employee IDs
+// ==========================================
+
+console.log("\n========== TASK 6 ==========");
+
+for(let i = 0; i < employees.length; i++)
+{
+    console.log(employees[i].id);
+}
+
+
+// ==========================================
+// Task 7 - Find Total Salary
+// ==========================================
+
+console.log("\n========== TASK 7 ==========");
+
+let totalSalary = 0;
+
+for(let i = 0; i < employees.length; i++)
+{
+    totalSalary += employees[i].salary;
+}
+
+console.log("Total Salary :", totalSalary);
+
+
+// ==========================================
+// Task 8 - Salary Greater Than 40000
+// ==========================================
+
+console.log("\n========== TASK 8 ==========");
+
+for(let i = 0; i < employees.length; i++)
+{
+    if(employees[i].salary > 40000)
+    {
+        console.log(employees[i].name);
+    }
+}
+
+
+// ==========================================
+// Task 9 - Increase Salary by 5000
+// ==========================================
+
+console.log("\n========== TASK 9 ==========");
+
+for(let i = 0; i < employees.length; i++)
+{
+    let newSalary = employees[i].salary + 5000;
+    console.log(employees[i].name + " : " + newSalary);
+}
+
+
+// ==========================================
+// Task 10 - Employee Report
+// ==========================================
+
+console.log("\n========== TASK 10 ==========");
+
+for(let i = 0; i < employees.length; i++)
+{
+    console.log(`
+Employee Name : ${employees[i].name}
+Employee ID   : ${employees[i].id}
+Salary        : ${employees[i].salary}
+`);
+}
+
+
+// ==========================================
+// Challenge Task
+// ==========================================
+
+console.log("\n========== CHALLENGE TASK ==========");
+
+// Total Employees
+
+console.log("Total Employees :", employees.length);
+
+
+// Highest Salary
+
+let highest = employees[0];
+
+for(let i = 1; i < employees.length; i++)
+{
+    if(employees[i].salary > highest.salary)
+    {
+        highest = employees[i];
+    }
+}
+
+console.log("Highest Salary :", highest.salary);
+console.log("Highest Paid Employee :", highest.name);
+
+
+// Lowest Salary
+
+let lowest = employees[0];
+
+for(let i = 1; i < employees.length; i++)
+{
+    if(employees[i].salary < lowest.salary)
+    {
+        lowest = employees[i];
+    }
+}
+
+console.log("Lowest Salary :", lowest.salary);
+console.log("Lowest Paid Employee :", lowest.name);
+
+
+// Total Salary
+
+let companySalary = 0;
+
+for(let i = 0; i < employees.length; i++)
+{
+    companySalary += employees[i].salary;
+}
+
+console.log("Total Salary :", companySalary);
+
+
+// Salary Greater Than 40000
+
+console.log("\nEmployees earning more than 40000");
+
+for(let i = 0; i < employees.length; i++)
+{
+    if(employees[i].salary > 40000)
+    {
+        console.log(employees[i].name);
+    }
+}
+
+
+// Search Employee by ID
+
+console.log("\nSearch Employee by ID");
+
+let searchEmployeeId = 102;
+let employeeFound = false;
+
+for(let i = 0; i < employees.length; i++)
+{
+    if(employees[i].id === searchEmployeeId)
+    {
+        console.log("Employee Found");
+        console.log("Name :", employees[i].name);
+        console.log("Salary :", employees[i].salary);
+        employeeFound = true;
+        break;
+    }
+}
+
+if(!employeeFound)
+{
+    console.log("Employee Not Found");
+}
+
+
+// Bonus
+
+console.log("\nSalary After Bonus");
+
+for(let i = 0; i < employees.length; i++)
+{
+    console.log(`${employees[i].name} : ${employees[i].salary + 5000}`);
+}
+
+
+// Professional Report
+
+console.log("\nProfessional Employee Report");
+
+for(let i = 0; i < employees.length; i++)
+{
+    console.log(`
+--------------------------------
+Employee Name : ${employees[i].name}
+Employee ID   : ${employees[i].id}
+Salary        : ₹${employees[i].salary}
+--------------------------------
+`);
+}
+
+</script>
+
+</body>
+</html>
